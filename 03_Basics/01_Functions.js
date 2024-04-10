@@ -45,3 +45,21 @@ function loginUser(username = "harshad"){   //Here after username i have passed 
 
 console.log(loginUser("nishant"));// We are passing the argument here so default value will be overwritten.
 console.log(loginUser()); // We are not passing the arguments so the default value is used in the return statement.
+
+// *rest operator | ... | * "Rest and Spread operator has same syntax but when we call it rest or spread its totally depend on the use case"
+
+function calculateCartPrice(num1){
+    return num1 ;  
+}; 
+console.log(calculateCartPrice(100,200,300)); // Here if you log the output you can see it's only returing one value which is first "100".
+
+function storeItems(...item){
+    return item;
+
+};
+console.log(storeItems('apple','mango','Banana','carrot')); // Here if you log the output you can see it givs us array of all the items not only one for example:- ['apple','mango','banana']
+
+function values ( val1, val2, ...other){
+    return other; //We are only returning "other" but we can use 'val1' and 'val2' also 
+};
+console.log(values(10,20,30,40,50)); // You can see the output here is "[30,40,50]" Because val1 will be assigned the value 10, val2 will be assigned the value 20, and the remaining arguments (30, 40, 50) will be collected into the other parameter as an array [30, 40, 50]. So, the function returns [30, 40, 50] as you observed.
