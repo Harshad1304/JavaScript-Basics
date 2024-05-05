@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Colors</title>
+</head>
+<body>
+    <h1>Changing Colors</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- const startBtn = document.querySelector('#start');
+const stopBtn = document.querySelector('#stop');
+
+const randomColorGen = ()=>{
+    const hexColor = '0123456789ABCDEF';
+    let color = '#' 
+    for(let i = 0; i < 6; i++){
+        color += hexColor[Math.floor(Math.random()*16)]
+    }
+       return color
+}
+
+let intervalId ; 
+
+const startChangingColor = ()=>{
+
+     if(!intervalId){
+        intervalId = setInterval( ()=>{ 
+            document.body.style.backgroundColor = randomColorGen() ;
+        },1000 )
+     }else{
+        console.log('No ID found')
+     }
+}
+
+startBtn.addEventListener('click', startChangingColor);
+
+stopBtn.addEventListener('click', (e)=>{
+    clearInterval(intervalId);
+    intervalId = null; 
+}) -->

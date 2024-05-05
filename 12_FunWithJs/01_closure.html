@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">Oragne</button>
+    <button id="green">Green</button>
+    <script>
+
+        // Lexical Scoping 
+         
+        // function init (){
+        //     let name = "Harshad";
+
+        //     function displayName(){
+        //         console.log("inner :-",name);
+        //     }
+        //     displayName();
+
+        // }
+        // init();
+
+        // let globalValue = "Global Value Found"
+
+        // function outer(){
+            
+        //     let userName = "omkar"
+        //     console.log(secret);
+
+        //     function inner(){
+
+        //         let secret = "1234";
+
+        //         console.log("inner :-",  userName); // here we have defined a new function insde our outer function here you can access the value username becasue its parent funtion of "inner" function also you can acess the values from the global scope too because its insde it check the below example .
+        //         console.log(globalValue);
+        //     }
+        //     function innerTwo(){
+        //         console.log(userName);
+        //         console.log(secret);
+        //     }
+        //     inner();
+        //     innerTwo();
+
+        // }
+
+        //     outer();
+        //     console.log("Too outer ", userName); // It will give u a referance error that userName is not defnied becasue its in a funtion scope and you cannot access the scoped from outside of that scope 
+
+        function makeFunc (){
+             const name = "Harshad";
+             function displayName(){
+                console.log(name);
+            
+             }
+             return displayName;
+        }
+
+        const myFunc = makeFunc();
+        
+        myFunc();
+    </script>
+
+    <script>
+
+        // document.getElementById('orange').onclick = function(){
+        //     document.body.style.backgroundColor = 'orange';
+        // }
+
+        // document.getElementById('green').onclick = function(){
+        //     document.body.style.backgroundColor = 'green';
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler('orange');
+        document.getElementById('green').onclick = clickHandler('green');
+
+    </script>
+
+</body>
+</html>
